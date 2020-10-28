@@ -46,7 +46,7 @@
                                     <th>Сеанс</th>
                                     <th>Вкл/Выкл</th>
                                 </tr>
-                                @if(isset($data_mobiles) && is_array($data_mobiles) && count($data_mobiles) > 0)
+                                @if(isset($data_mobiles) && $data_mobiles != false && count($data_mobiles) > 0)
 
                                     @foreach($data_mobiles as $data_mobile)
 

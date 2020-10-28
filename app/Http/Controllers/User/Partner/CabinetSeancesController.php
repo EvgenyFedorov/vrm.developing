@@ -90,7 +90,7 @@ class CabinetSeancesController extends UserController
 
             $data_seances = $seancesRepository->getSeances($result['user']->id);
             $data_films = $filmsRepository->getFilms();
-            $data_mobiles = $mobilesRepository->getMobiles($result['user']->id);
+            $data_mobiles = $mobilesRepository->getMobilesSelected($result['user']->id);
 
             return view($result['role']['dir'] . '.seances.list', [
                 'user' => $result['user'],

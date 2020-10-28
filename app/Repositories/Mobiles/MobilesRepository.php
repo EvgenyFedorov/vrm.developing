@@ -14,6 +14,10 @@ class MobilesRepository extends CoreRepository
         return Model::class;
     }
     public function getMobiles($id){
+        return $this->startConditions()->where([['user_id', $id]])->
+        orderBy('id', 'asc')->get();
+    }
+    public function getMobilesSelected($id){
         $mobiles = $this->startConditions()->where([['user_id', $id]])->
         orderBy('id', 'asc')->get();
 

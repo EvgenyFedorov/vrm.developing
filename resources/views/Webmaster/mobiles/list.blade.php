@@ -46,16 +46,13 @@
                                     <th>Сеанс</th>
                                     <th>Вкл/Выкл</th>
                                 </tr>
-                                @if(isset($data_mobiles) AND count($data_mobiles) > 0)
+                                @if(isset($data_mobiles) && is_array($data_mobiles) && count($data_mobiles) > 0)
 
                                     @foreach($data_mobiles as $data_mobile)
 
                                         <?php
 
                                         $class = ($data_mobile->status == 0) ? "default" : "table-success";
-
-                                        //dd($data_mobile, $data_mobile->seance, $data_mobile->seance->film);
-
 
                                         ?>
 

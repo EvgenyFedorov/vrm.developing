@@ -52,10 +52,6 @@ class CabinetMobilesController extends UserController
 
             $data_mobiles = $mobilesRepository->getMobiles($result['user']->id);
 
-            foreach ($data_mobiles as $data_mobile){
-                //dd($data_mobile, $data_mobile->seance, $data_mobile->seance->film);
-            }
-
             return view($result['role']['dir'] . '.mobiles.list', [
                 'user' => $result['user'],
                 'role' => $result['role'],

@@ -35,7 +35,7 @@ class CabinetLogsController extends UserController
         if($result = $this->isRole()){
 
             //$data_jobs = $this->jobs()->getEdit($result['user']->id);
-            $time_zone = TimeZones::find($result['user']->time_zone_id);
+            //$time_zone = TimeZones::find($result['user']->time_zone_id);
 
             $data_jobs = $jobRepository->getData(null, $result['user']->id);
             $job_statuses = $jobRepository->getStatuses();
@@ -44,7 +44,7 @@ class CabinetLogsController extends UserController
                 'user' => $result['user'],
                 'role' => $result['role'],
                 'data_jobs' => $data_jobs,
-                'time_zone' => $time_zone,
+                //'time_zone' => $time_zone,
                 'job_statuses' => $job_statuses
             ]);
 

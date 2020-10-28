@@ -47,38 +47,7 @@
 {{--                                    <th>Изменен</th>--}}
 {{--                                    <th>Вкл/Выкл</th>--}}
                                 </tr>
-                                <?php
 
-                                /*
-                                 * Отсчитываем время исходя из настроек юзера
-                                 * */
-
-                                    $sh = 3600; // секунд в часе
-                                    $sm = 60; // секунд в минуте
-                                    $mat_operator = null; // математический оператор
-                                    $datetime = 0; // Сколько часов и минут нужно вычесть или прибавить
-
-                                    if($time_zone->timezone_utc != "UTC"){
-
-                                        // Берем математический оператор сложения или вычитания
-                                        preg_match('/(\+|\-)/', $time_zone->timezone_utc, $result_symbol);
-                                        $mat_operator = $result_symbol[0];
-
-                                        // Проверяем ровно ли часов или с минутами
-                                        preg_match('/[0-9\:]{1,5}/', $time_zone->timezone_utc, $result_hours);
-
-                                        $explode_hours = explode(":", $result_hours[0]);
-
-                                        if(isset($explode_hours[0])){
-                                            $datetime = $datetime + ($sh * $explode_hours[0]);
-                                        }
-                                        if(isset($explode_hours[1])){
-                                            $datetime = $datetime + ($sm * $explode_hours[1]);
-                                        }
-
-                                    }
-
-                                ?>
                                 @if(isset($data_jobs) AND count($data_jobs) > 0)
 
                                     @foreach($data_jobs as $data_job)
